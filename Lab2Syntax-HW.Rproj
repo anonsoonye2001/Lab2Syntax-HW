@@ -1,0 +1,122 @@
+# this is the LAb 2 assignment 09/10/2019
+
+
+
+# lab2 assignment
+
+5 -> a  # Object with right to left assignment operator
+
+b<- 7 # object with left to right assignment operator
+
+x <- "bag" # object x created as character
+typeof(x)
+
+y<-1:10 # object y is set aa integer
+typeof(y)
+
+z<-10      #object z set as numeric
+z
+class(z)
+
+
+a<-c(1,2,3,4,3,2) # object a is set as factor data
+sf<-factor (a)
+sf
+
+32%%3 # the operator %% is modulus. R will call the remainder of the division 
+of the first object by the second object.
+
+20^2  # the operator ^ is an exponent. The first object is multiplying itself 
+by the the numeric in the second objects. 
+
+50%/%3  # the operator %/% is an integer division. R will call the number of 
+times the second object divides the first object.  
+
+q<-11:20 # object q is a sequence of 10 numbers.
+q
+a=7; b=9; c=10  # three objects with number assigned to each existing on a single 
+line
+a;b;c   # code for printing the values of the 3 objects.
+
+a*b+c  # in the operation, the object a multiples with b then c is added afterwards.
+
+a*(b+c) # the addition of b to c before multiplication of the sum with a.
+
+# In "Inf", number is too large for computation. so R will return Inf for positive 
+numbers and -Inf for a negative number.
+# Inf is positive infinity while -Inf is negative infinity.
+
+3^2034 # special value for Inf
+-3^2034 # special value for -Inf.
+
+# NaN is seen when computation produce values that make little sense.
+#NaN means "not a number"
+
+Inf-Inf # NaN
+0/0 #NaN
+
+# NA meaning "not available" is used to represent missing values in text loaded 
+into R or from data base
+
+s<-c(1,2,3,4)
+length(s)
+length(s)<- 6
+s
+# when call for the length of "s" was increased from 4 to 6, R returned two NA i.e not available on the list 
+
+t<-7
+t<-NULL
+t
+# NULL is returned when value is undefined.
+
+# binary operator with 2 variables assigned with appropriate symbols between two %
+
+'%query%'<-function(x,y){3*x + 6*y}
+2%query%3
+
+31%%2 # example of modulus
+
+21%/%2 # example of integer division
+
+7^3  #example of exponent
+
+switcheroo.if.then<-function(x){
+  if(x=="a")
+    "antelope"
+  else if(x=="b")
+    "bear"
+  else if(x=="c")
+    "cat"
+  else
+    "dog"
+}
+switcheroo.if.then(x="a")
+switcheroo.if.then(x="b")
+switcheroo.if.then(x="c")
+switcheroo.if.then(x)
+
+switcheroo.switch<-function(x){
+  switch(x,
+         a= "antelope",
+         b="bird",
+         c="cat",
+         "dog")
+}
+
+switcheroo.switch(x="a")
+switcheroo.switch(x="b")
+switcheroo.switch(x="c")
+switcheroo.switch(x)
+
+
+load(file="fish_data.Rdata")
+str(fish)
+# the different data types are; chr, factor,num,POSIXct and Int 
+nrow(fish)
+ncol(fish)
+class(fish$year) # reveals data set type (class) under the year column.
+fish$area_fac<-as.character(fish$area_fac) # changes area_fac from a factor 
+to character
+str(fish) # structure call confirms the change
+fish$avg.DNE.m<-NULL #command calls for removal of the 'avg.DNE.m" 
+str(fish)  # command confirms the removal
